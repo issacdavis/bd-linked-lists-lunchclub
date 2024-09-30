@@ -1,15 +1,19 @@
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Comment this class appropriately.
  */
 public class LunchClub {
+    private List<String> membersInLine;
 
     /**
      * Initializes the `LinkedList` called `membersInLine` to make it ready for members
      * to line up for lunch.
      */
+
     public LunchClub() {
+        membersInLine = new LinkedList<>();
     }
 
     /**
@@ -17,14 +21,14 @@ public class LunchClub {
      * @param newMember - member to add.
      */
     public void addMemberToLine(String newMember) {
-
+        membersInLine.add(newMember);
     }
 
     /**
      * Removes a person from the front of the lunch line to serve them food.
      */
     public void serveMember() {
-
+        membersInLine.remove(0);
     }
 
     /**
@@ -32,7 +36,9 @@ public class LunchClub {
      * @param newMembers - List of members to add.
      */
     public void addGroupToLine(List<String> newMembers) {
-
+        for (String newMember : newMembers) {
+            membersInLine.add(newMember);
+        }
     }
 
     /**
@@ -40,7 +46,7 @@ public class LunchClub {
      * @return lunch line members LinkedList.
      */
     public List<String> getMembersInLine() {
-        return null;
+        return membersInLine;
     }
 
 }
